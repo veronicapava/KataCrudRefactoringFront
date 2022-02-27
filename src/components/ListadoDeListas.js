@@ -1,7 +1,7 @@
 import React from 'react'
 import useFetch from '../utils/useFetch'
 import List from './List'
-import ToDo from './ToDo'
+
 
 const ListadoDeListas = () => {
 
@@ -15,16 +15,22 @@ const ListadoDeListas = () => {
         return <span>No hay listas</span>
     }
 
-    const todoByLista = listas.map(list => todos.filter(todo => todo.idList == list.id))
+    const listWithTodos = listas.map(list => {
+        const todosInList = todos.filter(todo => todo.idList === list.id)
+        return { list, todos: todosInList }
+    })
+
+    console.log(listWithTodos)
 
     return (
         <div>
             <h1>Listas</h1>
             {
-                todos.map(todo => (
-                    <ToDo
-                        key={todo.idToDo}
-                        {...todo}
+                listWithTodos.map(info => (
+                    <List
+                        key={info.list.id}
+                        list={info.list}
+                        todos={info.todos}
                     />
                 ))
             }
