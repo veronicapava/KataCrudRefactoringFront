@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import EditToDo from './EditToDo'
 
 const decorationDone = {
@@ -7,21 +7,24 @@ const decorationDone = {
 
 
 const ToDo = (todo) => {
-    console.log("-***-")
-    console.log(todo)
+    const [editandoTodo, setEditando] = useState(false)
 
-    return (<>
+    const submit = (e) => {
+        setEditando(true)
+    }
+
+    return (
         <tr key={todo.idToDo} style={todo.completed ? decorationDone : {}}>
             <td>{todo.idToDo}</td>
             <td>{todo.nameToDo}</td>
             <td><input type="checkbox" defaultChecked={todo.completed}></input></td>
             <td><button >Eliminar</button></td>
-            <td><button >Editar</button></td>
-            <EditToDo />
+            <td><button onClick={() => { submit() }}>Editar</button>
+                {
+                    editandoTodo ? <EditToDo /> : <></>
+                }
+            </td>
         </tr>
-
-    </>
-
     )
 }
 

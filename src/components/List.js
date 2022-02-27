@@ -9,7 +9,6 @@ const List = ({ list, todos }) => {
         <>
             <div>
                 <h1>{list.name}</h1>
-                <button>Editar Lista</button>
                 <button>Eliminar Lista</button>
                 <CreateToDo />
             </div>

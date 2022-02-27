@@ -3,16 +3,24 @@ import useFetch from '../utils/useFetch'
 
 const EditToDo = () => {
 
-    const edit = useFetch("/todo/{id}")
+    const cancelar = (e) => {
+        e.preventDefault()
+        console.log("Modificar estado global de modificar todo, ponerle false")
+        console.log("Aca cancelar y no llamar a fetch")
+    }
+
+    const editTodo = (e) => {
+        e.preventDefault()
+        console.log("Modificar estado global de modificar todo, ponerle false")
+        console.log("Aca llamar a fetch para actualizar el todo")
+    }
 
     return (
         <div>
-            {
-
-            }
             <form>
                 <input type="text" placeholder="Nombre a cambiar"></input>
-                <button>Editar ToDo</button>
+                <button onClick={editTodo}>Aceptar</button>
+                <button onClick={cancelar}> Cancelar</button>
             </form>
         </div>
     )
