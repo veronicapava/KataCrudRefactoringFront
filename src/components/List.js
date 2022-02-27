@@ -10,11 +10,6 @@ const List = (props) => {
                 <button>Eliminar</button>
             </div>
             <ToDo></ToDo>
-            <li>Hola</li>
-            <li>Hola</li>
-            <li>Hola</li>
-            <li>Hola</li>
-
         </>
 
     )
