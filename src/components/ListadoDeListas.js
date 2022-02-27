@@ -1,23 +1,30 @@
 import React from 'react'
 import useFetch from '../utils/useFetch'
 import List from './List'
+import ToDo from './ToDo'
 
-const ListadoDeListas = ({ peticion }) => {
-    console.log(peticion)
-    const listas = useFetch(peticion)
+const ListadoDeListas = () => {
 
-    console.log(listas)
+    const todos = useFetch("/todos")
+    const listas = useFetch("/list")
+
+    console.log(todos);
+    console.log(listas);
+
     if (!listas) {
         return <span>No hay listas</span>
     }
+
+    const todoByLista = listas.map(list => todos.filter(todo => todo.idList == list.id))
+
     return (
         <div>
             <h1>Listas</h1>
             {
-                listas.map(li => (
-                    <List
-                        key={li.id}
-                        {...li}
+                todos.map(todo => (
+                    <ToDo
+                        key={todo.idToDo}
+                        {...todo}
                     />
                 ))
             }

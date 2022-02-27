@@ -8,7 +8,7 @@ const App = () => (
         <h1>To-Do application</h1>
         <CreateList />
 
-        <ListadoDeListas peticion="/list" />
+        <ListadoDeListas />
 
     </>
 )
