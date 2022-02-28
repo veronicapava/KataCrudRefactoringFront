@@ -1,16 +1,16 @@
 import React from 'react'
 import ToDo from './ToDo'
 import CreateToDo from './CreateToDo'
+
 const List = ({ list, todos }) => {
-    console.log("------------------------------")
-    console.log(list)
-    console.log(todos)
     return (
         <>
             <div>
                 <h1>{list.name}</h1>
                 <button>Eliminar Lista</button>
-                <CreateToDo />
+                <CreateToDo
+                    {...list}
+                />
             </div>
 
             <div>
@@ -35,9 +35,6 @@ const List = ({ list, todos }) => {
                     </tbody>
                 </table>
             </div>
-
-
-
         </>
 
     )

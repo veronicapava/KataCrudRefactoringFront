@@ -15,6 +15,7 @@ const CreateList = () => {
         fetch(`${process.env.REACT_APP_HOST_API}/list`,
             requestParameters
         ).then(() => {
+            console.log("Lista creada")
         })
     }
 
