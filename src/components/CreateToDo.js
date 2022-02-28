@@ -8,9 +8,9 @@ const CreateToDo = (lista) => {
         const headers = { 'Content-Type': 'application/json' }
         console.log(nameTodo)
         const bodyValue = {
-            name: nameTodo,
+            nameToDo: nameTodo,
             completed: false,
-            list: lista
+            idList: lista.id
         }
         let requestParameters = { method: "POST", headers, body: JSON.stringify(bodyValue) }
         console.log(requestParameters)

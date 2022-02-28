@@ -4,8 +4,8 @@ import CreateToDo from './CreateToDo'
 
 const List = ({ list, todos }) => {
     return (
-        <>
-            <div>
+        <div className="card card-body border-primary mb-3 mt-2">
+            <div >
                 <h1>{list.name}</h1>
                 <button>Eliminar Lista</button>
                 <CreateToDo
@@ -35,7 +35,7 @@ const List = ({ list, todos }) => {
                     </tbody>
                 </table>
             </div>
-        </>
+        </div >
 
     )
 }

@@ -24,7 +24,7 @@ const CreateList = () => {
             <h3>Crear nueva lista de tareas:</h3>
             <input type="text" required value={lista} placeholder="Nombre de tu lista"
                 onChange={(e) => setLista(e.target.value)} />
-            <input type="submit" value="Guardar" />
+            <input type="submit" className="btn btn-primary" value="Guardar" />
         </form>
     )
 }
