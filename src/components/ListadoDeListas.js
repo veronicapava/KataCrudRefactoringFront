@@ -8,9 +8,6 @@ const ListadoDeListas = () => {
     const todos = useFetch("/todos")
     const listas = useFetch("/list")
 
-    console.log(todos);
-    console.log(listas);
-
     if (!listas) {
         return <span>No hay listas</span>
     }
@@ -19,8 +16,6 @@ const ListadoDeListas = () => {
         const todosInList = todos.filter(todo => todo.idList === list.id)
         return { list, todos: todosInList }
     })
-
-    console.log(listWithTodos)
 
     return (
         <div>
